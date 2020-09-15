@@ -43,7 +43,7 @@ public class Sex implements Comparable<Sex> {
      */
     @Override
     public int compareTo(Sex o) {
-        int result = 0;
+        int result;
         result = getMAN().compareTo(o.getMAN());
         if (result != 0) {
             return result;
