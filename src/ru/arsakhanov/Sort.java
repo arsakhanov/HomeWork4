@@ -9,6 +9,5 @@ public interface Sort {
      *
      * @param persons массив объектов типа Person
      */
-    static void sort(Person[] persons) {
-    }
+     Person[] sort(Person[] persons);
 }
