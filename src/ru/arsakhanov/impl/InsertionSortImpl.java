@@ -17,7 +17,7 @@ public class InsertionSortImpl implements Sort {
      *
      * @param persons массив объектов типа Person
      */
-    public static void sort(Person[] persons) {
+    public Person[] sort(Person[] persons) {
         long startTime = System.currentTimeMillis();
         for (int i = 1; i < persons.length; i++) {
             Person current = persons[i];
@@ -31,6 +31,6 @@ public class InsertionSortImpl implements Sort {
         long endTime = System.currentTimeMillis();
         System.out.println("Время работы сортировки вставками составляет составляет: "
                 + (endTime - startTime) + " милисекунды");
-
+        return persons;
     }
 }

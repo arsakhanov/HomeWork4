@@ -20,7 +20,7 @@ public class BubbleSortImpl implements Sort {
      * @param persons массив объектов типа Person
      */
 
-    public static void sort(Person[] persons) {
+    public Person[] sort(Person[] persons) {
         long startTime = System.currentTimeMillis();
         int size = persons.length;
         for (int i = 0; i < size - 1; i++) {
@@ -36,6 +36,7 @@ public class BubbleSortImpl implements Sort {
         long endTime = System.currentTimeMillis();
         System.out.println("Время пузырьковой сортировки составляет составляет: "
                 + (endTime - startTime) + " милисекунды");
+        return persons;
     }
 }
 
