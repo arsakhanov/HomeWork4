@@ -59,6 +59,7 @@ public class Person implements Comparable<Person> {
                 '}';
     }
 
+
     /**
      * Переопределенный метод compareTo
      * сначала сравнивает по полю sex
@@ -81,14 +82,15 @@ public class Person implements Comparable<Person> {
         }
         result = Integer.compare(getAge(), o.getAge());
         if (result != 0) {
-            return result * -1;
-        } else {
-            result = getName().compareTo(o.getName());
-            if (result == 0) {
-                throw new SameNameAndAgeException("Возраст и имя одинаковые", getAge(), getName());
-            }
+            return result * -1; /*чтобы во время сортировки числа не сортировались от меньшего к большему
+                               3 compare 5 = -1, но мне нужно число 5 поэтому умножаю на -1
+                               и так я обманываю сравнение типа 5 меньше 3*/
+
         }
         result = getName().compareTo(o.getName());
+        if (result == 0) {
+            throw new SameNameAndAgeException("Возраст и имя одинаковые");
+        }
         return result;
     }
 }
