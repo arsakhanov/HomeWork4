@@ -8,12 +8,12 @@ import java.util.Random;
  * для поля sex в классе Person
  */
 public class Sex implements Comparable<Sex> {
-    private static final String MAN = "MAN";
-    private static final String WOMAN = "WOMAN";
+    public static final String MAN = "MAN";
+    public static final String WOMAN = "WOMAN";
 
-    private static final String[] VALUES = {MAN, WOMAN};
-    private static final int SIZE = VALUES.length;
-    private static final Random RANDOM = new Random();
+    public static final String[] VALUES = {MAN, WOMAN};
+    public static final int SIZE = VALUES.length;
+    public static final Random RANDOM = new Random();
 
     public String getMAN() {
         return MAN;
@@ -44,14 +44,7 @@ public class Sex implements Comparable<Sex> {
     @Override
     public int compareTo(Sex o) {
         int result;
-        result = getMAN().compareTo(o.getMAN());
-        if (result != 0) {
-            return result;
-        }
-        result = getWOMAN().compareTo(o.getWOMAN());
-        if (result != 0) {
-            return result;
-        }
+        result = getMAN().compareTo(o.getWOMAN());
         return result;
     }
 }
