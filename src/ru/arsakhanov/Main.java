@@ -6,26 +6,24 @@ import ru.arsakhanov.impl.InsertionSortImpl;
 public class Main {
 
     public static void main(String[] args) {
-        Person[] person = new Person[100];
-        for (int i = 0; i < person.length; i++) {
-            person[i] = new Person();
-        }
-        BubbleSortImpl.sort(person);
+        RandomArray randomArray = new RandomArray();
+        ShowPersons showPersons = new ShowPersons();
+        Person[] person;
+
+        person = randomArray.createArrayRandom();
+        Sort sorting = new BubbleSortImpl();
+        Person[] sortingPersons = sorting.sort(person);
         System.out.println("Пузырьковая сортировка");
-        for (Person value : person) {
-            System.out.println(value);
-        }
+        showPersons.showArray(sortingPersons);
         System.out.println("=======================================================================================");
+
         /*Создаю новые объекты, чтобы сортировка вставками использовала новый массив, а не уже отсортированный
         пузырьковой сортировкой */
-        for (int i = 0; i < person.length; i++) {
-            person[i] = new Person();
-        }
-        InsertionSortImpl.sort(person);
+        person = randomArray.createArrayRandom();
+        sorting = new InsertionSortImpl();
+        sortingPersons = sorting.sort(person);
         System.out.println("Сортировка вставками");
-        for (Person value : person) {
-            System.out.println(value);
-        }
+        showPersons.showArray(sortingPersons);
         System.out.println("=======================================================================================");
 
 
